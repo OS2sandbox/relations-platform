@@ -12,17 +12,17 @@ Denne mappe indeholder projektets samlede dokumentation.
 ## Indhold
 
 | Område | Beskrivelse |
-|--------|-------------|
-| `krav/` | Behov, krav og prioriteringer |
-| `workshops/` | Workshopmateriale og referater |
-| `analyser/` | Vurderinger af relevante open source-produkter |
-| `beslutninger/` | Projektets beslutningsnotater |
-| `arkitektur/` | Beskrivelse af platform og integrationer |
-| `billeder/` | Diagrammer, skærmbilleder og illustrationer |
+|---|---|
+| [Behov og krav](krav/README.html) | Behov, krav og prioriteringer |
+| [Workshops](workshops/README.html) | Workshopmateriale og referater |
+| [Analyser](analyser/README.html) | Vurderinger af relevante open source-produkter |
+| [Beslutninger](beslutninger/README.html) | Projektets beslutningsnotater |
+| [Arkitektur](arkitektur/README.html) | Beskrivelse af platform og integrationer |
+| [Komponenter](komponenter/README.html) | Undersøgte systemer og komponenter |
 
 ## Centrale dokumenter
 
-- `vision.md`
-- `projektbeskrivelse.md`
-- `roadmap.md`
-- `styring-og-roller.md`
+- [Vision](vision.html)
+- [Projektbeskrivelse](projektbeskrivelse.html)
+- [Roadmap](roadmap.html)
+- [Styring og roller](styring-og-roller.html)
