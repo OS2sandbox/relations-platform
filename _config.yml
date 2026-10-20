@@ -1,0 +1,20 @@
+title: OS2 Relationsplatform
+description: Dokumentation for OS2 Relationsplatform
+
+url: "https://os2sandbox.github.io"
+baseurl: "/relations-platform"
+
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+
+plugins:
+  - jekyll-remote-theme
+
+search_enabled: true
+
+color_scheme: light
+
+aux_links:
+  "GitHub":
+    - "https://github.com/OS2sandbox/relations-platform"
+
+aux_links_new_tab: true
