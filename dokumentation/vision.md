@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Vision
-parent: Dokumentation
-nav_order: 2
+parent: Om projektet
+grand_parent: Dokumentation
+nav_order: 1
 ---
