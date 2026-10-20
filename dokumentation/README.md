@@ -1,3 +1,10 @@
+---
+layout: default
+title: Dokumentation
+nav_order: 2
+has_children: true
+---
+
 # Dokumentation
 
 Denne mappe indeholder projektets samlede dokumentation.
