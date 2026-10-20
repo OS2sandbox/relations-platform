@@ -1,3 +1,11 @@
+---
+layout: default
+title: Kravspecifikation
+parent: Behov og krav
+grand_parent: Dokumentation
+nav_order: 2
+---
+
 # OS2 Relationsplatform – kravspecifikation (første udkast)
 
 **Status:** Levende kravgrundlag, ikke endeligt godkendt eller prioriteret  
