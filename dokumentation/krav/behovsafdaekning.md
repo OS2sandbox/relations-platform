@@ -1,3 +1,11 @@
+---
+layout: default
+title: Behovsafdækning
+parent: Behov og krav
+grand_parent: Dokumentation
+nav_order: 1
+---
+
 # OS2 Relationsplatform – behovsafdækning
 
 **Status:** Løbende behovskonsolidering og afklaring. Principperne nedenfor er afklaret i arbejdsdialogen og dokumenteres her som grundlag for den videre behandling i projektet.  
