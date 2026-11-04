@@ -8,7 +8,7 @@ nav_order: 1
 # OS2 Relationsplatform – behovsafdækning
 
 **Status:** Løbende behovskonsolidering og afklaring. Principperne nedenfor er afklaret i arbejdsdialogen og dokumenteres her som grundlag for den videre behandling i projektet.  
-**Opdateret:** 2. november 2026  
+**Opdateret:** 4. november 2026  
 **Grundlag:** 21 indsendte usecases (19 oprindelige samt [#32](https://github.com/OS2sandbox/relations-platform/issues/32) og [#33](https://github.com/OS2sandbox/relations-platform/issues/33) fra 20. oktober) i [projektets GitHub Issues](https://github.com/OS2sandbox/relations-platform/issues)  
 **Relateret dokument:** [Kravspecifikation – første udkast](kravspecifikation.md)  
 **Arbejdsprincipper:** [Dokumentationens README](../README.md)
@@ -43,6 +43,8 @@ De første 19 usecases blev samlet i syv behovsområder. Efterfølgende er [#32]
 **Fase 1:** Seks behovsområder. Af de oprindelige 19 usecases hører 16 til fase 1, mens tre vedrører senere afklaring. Issue #32 indgår i fase 1; issue #33 indeholder både et fase 1-behov (internt overblik over produkttilslutninger) og behov til senere fase (kommunal selvbetjening og økonomi). Område 6 er supplerende og tælles ikke som et indsendt issue. Område 5 omfatter hjemmeside som selvstændig funktion med særlig kobling til arrangementer.
 
 Områdeinddelingen er ikke en beslutning om antallet af tekniske systemer.
+
+**Status for konsolideringen:** Område 1 (kontaktpersoner), område 2 (relationshistorik) og område 3 (organisationer/produkter/projekter) er gennemgået på principniveau. De øvrige fase 1-områder gennemgås efterfølgende. Konkrete systemvalg og prioritering af krav afventer.
 
 ## 3. Tværgående principper og grundregistre
 
@@ -108,6 +110,7 @@ Registrering og vedligeholdelse skal så vidt muligt kunne ske decentralt hos de
 | G-10 | Registrering og vedligeholdelse muliggøres så decentralt som muligt; detaljeret ansvar og rettigheder afklares samlet senere. | Afklaret 02.11.2026 |
 | G-11 | Projekter og produkter registreres i samme grundregister med livscyklusstatus og bevaret historik. | Afklaret 02.11.2026 |
 | G-12 | Kontaktfunktioner registreres struktureret på relationen mellem person, organisation og produkt og bruges til søgning og målgrupper. | Afklaret 02.11.2026 |
+| G-13 | Relationshistorik deles som udgangspunkt mellem relevante interne brugere på tværs af produkter, med mulighed for at begrænse adgangen til fortrolige oplysninger. | Afklaret 04.11.2026; konkret adgangsmodel afprøves senere |
 
 ## 4. Kontaktpersoner, roller og målgrupper
 
@@ -224,11 +227,76 @@ Kontaktens eventuelle afdeling kan registreres som supplerende oplysning, men et
 **Sporbarhed:** [#11](https://github.com/OS2sandbox/relations-platform/issues/11), [#13](https://github.com/OS2sandbox/relations-platform/issues/13), [#21](https://github.com/OS2sandbox/relations-platform/issues/21), [#28](https://github.com/OS2sandbox/relations-platform/issues/28).  
 **Åbent:** Samlet model for dataansvar, redigeringsrettigheder og godkendelser; behandles senere frem for at blive fastlåst for hver oplysning nu.
 
-## 7. Øvrige behovsområder og videre arbejde
+## 7. Relationshistorik, dialog og opfølgning
+
+**Status:** Behovsområdet er gennemgået på principniveau. Valg af tekniske løsninger og konkret adgangsmodel er åbent.  
+**Usecases:** [#15](https://github.com/OS2sandbox/relations-platform/issues/15), [#16](https://github.com/OS2sandbox/relations-platform/issues/16) og [#17](https://github.com/OS2sandbox/relations-platform/issues/17).
+
+De tre usecases beskriver et fælles behov for at bevare kendskab til tidligere kommunikation, samle længerevarende dialoger og sikre opfølgning på aftaler. Formålet er relationsstyring i det daglige arbejde, ikke at etablere et fuldt sagsbehandlings- eller projektstyringssystem.
+
+### RH-01 – Fælles relationshistorik og gennemsigtighed
+
+Relationshistorik og registreret kommunikation skal som udgangspunkt kunne anvendes af relevante interne brugere på tværs af OS2-produkter. Viden om tidligere dialoger og aftaler skal bevares ved udskiftning af produktforvaltere og være tilgængelig for kolleger, som fortsætter relationen. Udgangspunktet er gennemsigtighed, men fortrolige eller beskyttelseskrævende oplysninger skal kunne afskærmes, uden at øvrige oplysninger om samme kontakt eller organisation unødigt skjules.
+
+**Sporbarhed:** [#15](https://github.com/OS2sandbox/relations-platform/issues/15), [#16](https://github.com/OS2sandbox/relations-platform/issues/16).  
+**Afklaret:** Fælles viden frem for personlige noter; bred intern gennemsigtighed med mulighed for fortrolighed som begrundet undtagelse.  
+**Åbent:** Konkret rettighedsmodel og hvordan begrænsninger håndteres ved opslag, søgning, rapporter og notifikationer. Dette undersøges ved systemafprøvning.
+
+### RH-02 – Registrering og udvalgt overførsel af kontaktaktiviteter
+
+Produktforvaltere skal enkelt kunne registrere relevante kontaktaktiviteter, eksempelvis samtaler, møder, beskeder og aftaler. Som supplement skal udvalgt kommunikation og kalenderinformation kunne overføres fra eksisterende kommunikations- og kalendersystemer. Brugeren vælger, hvad der skal indgå i den fælles historik; der er **ikke** behov for generel automatisk indsamling af al kommunikation.
+
+Registreringen skal være så let, at den også anvendes til korte, almindelige kontakter.
+
+**Sporbarhed:** [#15](https://github.com/OS2sandbox/relations-platform/issues/15).  
+**Afklaret:** Kombination af manuel registrering og mulighed for selektiv overførsel, uden binding til bestemte produkter.  
+**Åbent:** Hvilke former for overførsel og integrationer eksisterende systemer kan understøtte, og hvordan relevante oplysninger udvælges på en sikker måde.
+
+### RH-03 – Kontaktaktiviteter, emner og relationer
+
+En kontaktaktivitet skal kunne stå alene og knyttes til relevante personer, organisationer, produkter og **emner**. Emner bruges til kategorisering og fremsøgning; de er ikke det samme som et forløb. En aktivitet kan involvere flere deltagere eller have relation til mere end ét relevant produkt. Den samme aktivitet bør kunne genfindes fra flere sammenhænge uden at skulle dobbeltregistreres.
+
+**Sporbarhed:** [#15](https://github.com/OS2sandbox/relations-platform/issues/15), [#16](https://github.com/OS2sandbox/relations-platform/issues/16).  
+**Afklaret:** Aktiviteter kan registreres uden forløb og søges gennem deres tilknytninger og emner.  
+**Åbent:** Behov for fælles emnekategorier og hvor mange relationer en aktivitet skal kunne have i praksis.
+
+### RH-04 – Valgfrie forløb
+
+Når flere aktiviteter hører sammen over tid, skal de kunne samles i et **forløb** – enten ved registrering eller efterfølgende. Et forløb kan omfatte forskellige kontakter, møder og aftaler og have en ansvarlig, en status og relevante opfølgningsopgaver. Det må **ikke** være et krav at oprette et forløb for at registrere en almindelig kontaktaktivitet.
+
+**Sporbarhed:** [#16](https://github.com/OS2sandbox/relations-platform/issues/16).  
+**Afklaret:** Forløb er et valgfrit samlingspunkt for sammenhængende dialoger, ikke en obligatorisk sagsstruktur.  
+**Åbent:** Eventuelle standardstatuser og skabeloner for særlige typer forløb.
+
+### RH-05 – Enkel opgavestyring og opfølgning
+
+Aftaler og næste skridt skal kunne omsættes til opfølgningsopgaver med opgavebeskrivelse, ansvarlig, frist, status, eventuel prioritet og relation til kontaktaktivitet, forløb, person, organisation eller produkt. Opgaver kan også oprettes selvstændigt. De skal kunne tildeles andre relevante produktforvaltere, og brugerne skal kunne se både egne og fælles opgaver inden for de relevante produkter.
+
+**Sporbarhed:** [#17](https://github.com/OS2sandbox/relations-platform/issues/17).  
+**Afklaret:** Enkelt overblik og opfølgning – ikke generel projektstyring.  
+**Åbent:** Præcis udformning af liste-/tavlevisninger og eventuelle yderligere arbejdsflows.
+
+### RH-06 – Notifikationer og påmindelser
+
+En bruger skal kunne få besked om nye opgavetildelinger og påmindelser om kommende eller overskredne frister. Brugeren skal kunne tilpasse, hvilke meddelelser vedkommende modtager. Notifikationer skal følge de relevante adgangsrettigheder, så fortrolige oplysninger ikke utilsigtet videregives.
+
+**Sporbarhed:** [#17](https://github.com/OS2sandbox/relations-platform/issues/17).  
+**Afklaret:** Notifikationer er en del af opfølgningsfunktionen.  
+**Åbent:** Kanaler, standardintervaller og de præcise individuelle præferencer.
+
+### RH-07 – Afprøvning af fortrolighed
+
+Den konkrete metode til adgangsbegrænsning **fastlægges ikke nu**. Ved senere systemvurdering bør vi afprøve et simpelt scenarie: Tre registrerede samtaler vedrører samme kommune; to er almindeligt tilgængelige for relevante interne brugere, mens den tredje er fortrolig. Den fortrolige aktivitet må ikke blive synlig for uvedkommende – heller ikke gennem søgninger, rapporter eller notifikationer – men de to almindelige aktiviteter og øvrige fælles kontaktoplysninger skal fortsat kunne findes.
+
+Det er det ønskede resultat, der vurderes, ikke et på forhånd bestemt teknisk valg af adgangskontrol på aktivitets- eller forløbsniveau.
+
+**Sporbarhed:** [#15](https://github.com/OS2sandbox/relations-platform/issues/15), [#16](https://github.com/OS2sandbox/relations-platform/issues/16) samt afklaring i arbejdsdialogen.  
+**Status:** Afprøvningsscenarie til senere systemvurdering.
+
+## 8. Øvrige behovsområder og videre arbejde
 
 Følgende områder i fase 1 er endnu ikke konsolideret på samme detaljeringsniveau:
 
-- **Relationshistorik, dialog og opfølgning:** [#15](https://github.com/OS2sandbox/relations-platform/issues/15), [#16](https://github.com/OS2sandbox/relations-platform/issues/16), [#17](https://github.com/OS2sandbox/relations-platform/issues/17).
 - **Kommunikation og onboarding:** [#24](https://github.com/OS2sandbox/relations-platform/issues/24), [#25](https://github.com/OS2sandbox/relations-platform/issues/25), [#26](https://github.com/OS2sandbox/relations-platform/issues/26), [#27](https://github.com/OS2sandbox/relations-platform/issues/27).
 - **Hjemmeside og arrangementer:** [#14](https://github.com/OS2sandbox/relations-platform/issues/14), [#22](https://github.com/OS2sandbox/relations-platform/issues/22).
 
@@ -237,7 +305,7 @@ Senere behovsafklaring (ikke fase 1):
 - **Økonomi, fakturering og regnskab:** [#19](https://github.com/OS2sandbox/relations-platform/issues/19), [#23](https://github.com/OS2sandbox/relations-platform/issues/23) og økonomidelen af [#33](https://github.com/OS2sandbox/relations-platform/issues/33).
 - **Teknisk videndeling på tværs af OS2-produkter:** [#30](https://github.com/OS2sandbox/relations-platform/issues/30).
 
-## 8. Afklaringer og beslutningsspor
+## 9. Afklaringer og beslutningsspor
 
 Tabellen opsummerer de principper, der er aftalt i arbejdsdialogen. Den erstatter ikke en senere fælles gennemgang i projektets arbejdsgruppe.
 
@@ -262,5 +330,10 @@ Tabellen opsummerer de principper, der er aftalt i arbejdsdialogen. Den erstatte
 | 02.11.2026 | Tilslutninger | Selvstændig organisation-produkt-relation med status, datoer, kontakter og aftalelink. |
 | 02.11.2026 | Decentral administration | Produktforvaltere skal kunne registrere og vedligeholde bredt inden for egne produkter; detaljefordeling af ansvar behandles senere. |
 | 02.11.2026 | Organisationsoplysninger | Ingen obligatorisk organisationshierarki i fase 1; supplerende afdeling samt strukturerede produktvise kontaktfunktioner. |
+| 04.11.2026 | Relationshistorik | Fælles relationshistorik og intern gennemsigtighed på tværs af produkter som udgangspunkt; fortrolighed kan begrænse adgang. |
+| 04.11.2026 | Kontaktaktiviteter | Manuel registrering og selektiv overførsel fra eksisterende kommunikations- og kalendersystemer; ingen automatisk indsamling af alt. |
+| 04.11.2026 | Emner og forløb | Aktiviteter kan stå alene og kategoriseres; flere aktiviteter kan valgfrit samles i forløb, også senere. |
+| 04.11.2026 | Opfølgningsopgaver | Enkel fælles opgavestyring med ansvarlige, status, frister og relevante relationer samt notifikationer og brugerpræferencer. |
+| 04.11.2026 | Fortrolighed | Funktionelt resultat fastholdt, men konkret adgangsmodel afgøres efter afprøvning af relevante systemer. |
 
-**Næste trin:** Gennemgå relationshistorik, dialog og opfølgning og derefter de øvrige uafklarede behovsområder, fastholde nye afklaringer her og videreføre de tilstrækkeligt modne formuleringer til [kravspecifikation.md](kravspecifikation.md). Kravene prioriteres først, når det samlede billede for fase 1 er bedre belyst.
+**Næste trin:** Gennemgå Kommunikation og onboarding med udgangspunkt i [#24](https://github.com/OS2sandbox/relations-platform/issues/24)–[#27](https://github.com/OS2sandbox/relations-platform/issues/27), fastholde afklaringerne her og videreføre modne formuleringer til [kravspecifikation.md](kravspecifikation.md). Kravene prioriteres først, når det samlede fase 1-billede er bedre belyst.
