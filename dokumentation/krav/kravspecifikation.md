@@ -79,22 +79,34 @@ Kravene udspringer af usecases [#15](https://github.com/OS2sandbox/relations-pla
 | **KR-29** | Ved opgavetildeling og kommende eller overskredne frister skal platformen kunne give relevante notifikationer og påmindelser. Den enkelte bruger skal kunne tilpasse sine notifikationspræferencer. | [RH-06](behovsafdaekning.md#rh-06--notifikationer-og-påmindelser), [#17](https://github.com/OS2sandbox/relations-platform/issues/17) | Kravudkast; kanaler og tidsfrister åbne |
 | **KR-30** | Relationshistorik skal som udgangspunkt kunne deles internt, samtidig med at fortrolige oplysninger kan adgangsbegrænses uden unødigt at skjule øvrige oplysninger om samme kontakt, organisation eller produkt. Fortrolige oplysninger må ikke afsløres for uvedkommende gennem visninger, søgning, rapporter eller notifikationer. | [RH-01](behovsafdaekning.md#rh-01--fælles-relationshistorik-og-gennemsigtighed), [RH-07](behovsafdaekning.md#rh-07--afprøvning-af-fortrolighed), [#15](https://github.com/OS2sandbox/relations-platform/issues/15), [#16](https://github.com/OS2sandbox/relations-platform/issues/16) | Funktionelt krav; konkret adgangsmodel skal afprøves |
 
-## 7. Bevidst ikke fastlagt endnu
+## 7. Kravudkast – kommunikation og onboarding
+
+Kravene følger af usecases [#24](https://github.com/OS2sandbox/relations-platform/issues/24), [#25](https://github.com/OS2sandbox/relations-platform/issues/25), [#26](https://github.com/OS2sandbox/relations-platform/issues/26) og [#27](https://github.com/OS2sandbox/relations-platform/issues/27) og er formuleret til **den samlede platform**. Formålet er orientering, tilgængelige oplysninger og overblik – ikke automatisk styring af kommunikations- og onboardingprocesser.
+
+| ID | Krav til platformen | Grundlag | Status |
+| --- | --- | --- | --- |
+| **KR-31** | Platformen skal understøtte automatisk, hændelsesbaseret orientering om relevante registreringer og ændringer på tværs af funktioner. Nødvendige orienteringer skal kunne knyttes til brugerroller/ansvarsområder, og brugere skal frivilligt kunne abonnere på relevante produkter, hændelsestyper eller områder. | [KO-01](behovsafdaekning.md#ko-01--fælles-hændelsesbaserede-orienteringer-og-abonnementer), [#24](https://github.com/OS2sandbox/relations-platform/issues/24), [#27](https://github.com/OS2sandbox/relations-platform/issues/27) | Kravudkast; hændelsestyper og kanaler åbne |
+| **KR-32** | Relevante brugere skal ved nye projekter og skift i ansvarlige kunne finde centrale oplysninger om projektet, ansvarlige, forventede kommunikationsbehov og referencer til vejledninger. Platformen skal kunne orientere relevante funktioner, men skal ikke automatisk oprette onboardingopgaver eller administrere et obligatorisk onboardingforløb. | [KO-02](behovsafdaekning.md#ko-02--onboarding-understøttes-men-administreres-ikke), [#24](https://github.com/OS2sandbox/relations-platform/issues/24), [#25](https://github.com/OS2sandbox/relations-platform/issues/25), [#27](https://github.com/OS2sandbox/relations-platform/issues/27) | Kravudkast; detaljer om data og vejledninger åbne |
+| **KR-33** | Platformen skal give relevante interne brugere mulighed for at se og fremsøge kommende aktiviteter med tilknytning til produkt/projekt, aktivitetstype, forventet tidspunkt, ansvarlig og eventuelt kommunikationsbehov. Overblikket skal ikke forudsætte særskilt processtyring for kommunikationsindsatsen. | [KO-03](behovsafdaekning.md#ko-03--overblik-over-kommende-aktiviteter-og-kommunikationsbehov), [#26](https://github.com/OS2sandbox/relations-platform/issues/26) | Kravudkast; præcise visninger og felter åbne |
+| **KR-34** | Oplysninger om arrangementer og andre allerede registrerede aktiviteter skal kunne genbruges i kommunikationsoverblikket og kobles til eventuelle kommunikationsbehov uden parallel registrering af samme aktivitet. Dette skal også kunne fungere, hvis funktionerne understøttes af forskellige systemer. | [KO-04](behovsafdaekning.md#ko-04--genbrug-af-registreringer-herunder-arrangementer), [#26](https://github.com/OS2sandbox/relations-platform/issues/26), [#22](https://github.com/OS2sandbox/relations-platform/issues/22) | Kravudkast; samspil mellem systemer skal undersøges |
+
+## 8. Bevidst ikke fastlagt endnu
 
 - **Systemvalg:** OS2rollekatalog er en løsning, der kan undersøges, ikke en valgt komponent. Andre identitets- og rettighedsløsninger er ikke udelukket.
 - **Fysisk arkitektur:** Hvilke registre og funktioner der ligger i hvilket system, er åbent.
 - **Detaljeret rettighedsmatrix:** Præcis hvem der kan læse, oprette, ændre og slette oplysninger, skal beskrives senere.
 - **Målgrupper og kommunikation:** Det er endnu ikke afklaret, om udsendelse af invitationer og beskeder sker i platformen eller i et tilknyttet system.
 - **Påmindelser:** Samlet koordinering ved forskelligt interval mellem flere produkttilknytninger er endnu ikke fastlagt.
-- **Andre fase 1-områder:** Krav til kommunikation, onboarding, hjemmeside og arrangementer tilføjes, når de er gennemgået på behovsniveau.
+- **Resterende fase 1-områder:** Krav til hjemmeside og arrangementer tilføjes, når dette område er gennemgået. Adgangsstyringens tekniske og organisatoriske detaljer afklares samlet senere.
 - **Organisationer og produkter:** Statuskataloger, datakvalitet, overordnet ansvar og individuel læse-/skriveadgang skal konkretiseres senere.
 - **Relationshistorik:** Model for fortrolighed, integration/selektiv overførsel, fælles emner og opgavenotifikationer skal afprøves eller præciseres senere.
+- **Kommunikation og onboarding:** Hændelseskatalog, rollebestemte modtagere, frivillige abonnementsindstillinger og præcise visninger af kommunikationsbehov er fortsat åbne; ingen automatisk onboardingproces er forudsat.
 - **Myndigheders selvbetjening og økonomi:** Issue #33 fastholdes med behov om selvbetjening og økonomisk overblik i en senere fase; kun den interne tilslutningsoversigt indgår i fase 1.
 - **Prioritering:** Ingen krav er endnu klassificeret som fx skal/bør eller prioriteret i forhold til hinanden.
 
-## 8. Videre proces og sporbarhed
+## 9. Videre proces og sporbarhed
 
-1. Konsolider næste behovsområde (Kommunikation og onboarding) i [behovsafdækningen](behovsafdaekning.md), mens oprindelige usecases bevares.
+1. Konsolider næste behovsområde (Hjemmeside og arrangementer) i [behovsafdækningen](behovsafdaekning.md), mens oprindelige usecases bevares.
 2. Udled eller justér krav i dette dokument med stabile KR-ID'er og sporbarhed til behov og issue.
 3. Afklar åbne spørgsmål, før krav bruges til at evaluere systemer som endeligt vurderingsgrundlag.
 4. Gennemgå ændringer gennem projektets GitHub-proces. Når det samlede fase 1-billede er tilstrækkeligt belyst, kan krav prioriteres og omsættes til vurderingskriterier.

@@ -44,7 +44,7 @@ De første 19 usecases blev samlet i syv behovsområder. Efterfølgende er [#32]
 
 Områdeinddelingen er ikke en beslutning om antallet af tekniske systemer.
 
-**Status for konsolideringen:** Område 1 (kontaktpersoner), område 2 (relationshistorik) og område 3 (organisationer/produkter/projekter) er gennemgået på principniveau. De øvrige fase 1-områder gennemgås efterfølgende. Konkrete systemvalg og prioritering af krav afventer.
+**Status for konsolideringen:** Område 1 (kontaktpersoner), område 2 (relationshistorik), område 3 (organisationer/produkter/projekter) og område 4 (kommunikation/onboarding) er gennemgået på principniveau. Hjemmeside og arrangementer samt den samlede tekniske afklaring af brugerkonti og adgangsstyring kræver yderligere gennemgang. Konkrete systemvalg og prioritering af krav afventer.
 
 ## 3. Tværgående principper og grundregistre
 
@@ -111,6 +111,9 @@ Registrering og vedligeholdelse skal så vidt muligt kunne ske decentralt hos de
 | G-11 | Projekter og produkter registreres i samme grundregister med livscyklusstatus og bevaret historik. | Afklaret 02.11.2026 |
 | G-12 | Kontaktfunktioner registreres struktureret på relationen mellem person, organisation og produkt og bruges til søgning og målgrupper. | Afklaret 02.11.2026 |
 | G-13 | Relationshistorik deles som udgangspunkt mellem relevante interne brugere på tværs af produkter, med mulighed for at begrænse adgangen til fortrolige oplysninger. | Afklaret 04.11.2026; konkret adgangsmodel afprøves senere |
+| G-14 | Hændelsesbaserede notifikationer og abonnementer er en fælles platformfunktion; nødvendige orienteringer kan være rollebestemte, mens øvrige abonnementer vælges frivilligt. | Afklaret 04.11.2026; konkret abonnementsmodel åben |
+| G-15 | Platformen understøtter kommunikation og onboarding gennem information, overblik og orientering, men styrer ikke de administrative arbejdsprocesser eller opretter automatisk onboardingopgaver. | Afklaret 04.11.2026 |
+| G-16 | Eksisterende registreringer af arrangementer og aktiviteter genbruges til kommunikationsoverblik, frem for at aktiviteter registreres parallelt flere steder. | Afklaret 04.11.2026 |
 
 ## 4. Kontaktpersoner, roller og målgrupper
 
@@ -293,11 +296,57 @@ Det er det ønskede resultat, der vurderes, ikke et på forhånd bestemt teknisk
 **Sporbarhed:** [#15](https://github.com/OS2sandbox/relations-platform/issues/15), [#16](https://github.com/OS2sandbox/relations-platform/issues/16) samt afklaring i arbejdsdialogen.  
 **Status:** Afprøvningsscenarie til senere systemvurdering.
 
-## 8. Øvrige behovsområder og videre arbejde
+## 8. Kommunikation og onboarding
 
-Følgende områder i fase 1 er endnu ikke konsolideret på samme detaljeringsniveau:
+**Status:** Behovsområdet er gennemgået på principniveau. Detaljer om notifikationer, målgrupper og visninger afklares senere.  
+**Usecases:** [#24](https://github.com/OS2sandbox/relations-platform/issues/24), [#25](https://github.com/OS2sandbox/relations-platform/issues/25), [#26](https://github.com/OS2sandbox/relations-platform/issues/26) og [#27](https://github.com/OS2sandbox/relations-platform/issues/27).
 
-- **Kommunikation og onboarding:** [#24](https://github.com/OS2sandbox/relations-platform/issues/24), [#25](https://github.com/OS2sandbox/relations-platform/issues/25), [#26](https://github.com/OS2sandbox/relations-platform/issues/26), [#27](https://github.com/OS2sandbox/relations-platform/issues/27).
+De fire usecases peger på, at personer med kommunikationsansvar har behov for rettidig viden om nye projekter, ændringer i ansvarlige og kommende aktiviteter. Platformen skal **understøtte** arbejdet med relevante oplysninger og orienteringer, men ikke administrere den konkrete kommunikationsindsats eller onboardingprocessen.
+
+### KO-01 – Fælles hændelsesbaserede orienteringer og abonnementer
+
+Relevante registreringer og ændringer, fx et nyt OS2-projekt eller skift af en ansvarlig person, skal kunne udløse automatisk orientering uden særskilt manuel besked fra produktforvalteren. Notifikationer og abonnementer er en **fælles, tværgående funktion** i platformen og kan anvendes i flere behovsområder.
+
+Der skelnes mellem **rollebestemte orienteringer**, som er nødvendige for at udføre et ansvar, og **frivillige abonnementer**, hvor brugere vælger at følge bestemte produkter, hændelsestyper eller interesseområder. Eksempelvis skal kommunikationsfunktionen kunne orienteres ved oprettelse af et nyt projekt, uanset om en medarbejder selv har tilmeldt sig et frivilligt abonnement.
+
+**Sporbarhed:** [#24](https://github.com/OS2sandbox/relations-platform/issues/24), [#26](https://github.com/OS2sandbox/relations-platform/issues/26), [#27](https://github.com/OS2sandbox/relations-platform/issues/27).  
+**Afklaret:** Automatisk, hændelsesbaseret orientering samt rollebestemte og frivillige abonnementer.  
+**Åbent:** Hændelseskatalog, præcis modtagerafgrænsning, kanaler og brugerindstillinger; der er ikke valgt teknisk løsning.
+
+### KO-02 – Onboarding understøttes, men administreres ikke
+
+Når et nyt projekt eller en ny ansvarlig registreres, skal relevante funktioner kunne få besked og finde oplysninger om projektets formål og status, ansvarlige, kommunikationsbehov og links til eksisterende vejledninger og retningslinjer. Det hjælper de involverede med at gennemføre onboarding i deres almindelige arbejde.
+
+Platformen skal **ikke** automatisk oprette onboardingopgaver, etablere obligatoriske onboardingforløb eller styre, hvem der hvornår gennemfører de enkelte kommunikationsaktiviteter. Muligheden for manuel opgavestyring fra relationsområdet ændrer ikke på denne afgrænsning.
+
+**Sporbarhed:** [#24](https://github.com/OS2sandbox/relations-platform/issues/24), [#25](https://github.com/OS2sandbox/relations-platform/issues/25), [#27](https://github.com/OS2sandbox/relations-platform/issues/27).  
+**Afklaret:** Oplysninger, orientering og vejledning frem for automatisk processtyring.  
+**Åbent:** Hvilke konkrete grundoplysninger og dokumentreferencer, der er nødvendige for onboarding.
+
+### KO-03 – Overblik over kommende aktiviteter og kommunikationsbehov
+
+Kommunikationsfunktionen skal kunne få et samlet overblik over kommende aktiviteter, som kan kræve kommunikationsindsats, eksempelvis arrangementer, lanceringer og større opdateringer. Relevante oplysninger omfatter som udgangspunkt produkt/projekt, aktivitetens art, forventet tidspunkt, ansvarlig kontaktperson og eventuelt behov for kommunikationsbistand.
+
+Overblikket skal gøre det lettere at opdage behov i tide, men platformen skal ikke være et selvstændigt planlægnings- eller gennemførelsessystem for kommunikationsopgaver.
+
+**Sporbarhed:** [#26](https://github.com/OS2sandbox/relations-platform/issues/26), [#24](https://github.com/OS2sandbox/relations-platform/issues/24).  
+**Afklaret:** Synlighed og mulighed for relevant orientering – ikke detaljeret processtyring.  
+**Åbent:** Hvordan kommunikationsbehov markeres, og hvordan overblikket vises og filtreres.
+
+### KO-04 – Genbrug af registreringer, herunder arrangementer
+
+Et arrangement eller en anden aktivitet skal så vidt muligt kun registreres **ét sted**. Kommunikationsfunktionen skal kunne anvende de eksisterende aktivitetsoplysninger i sit overblik og se eller få tilknyttet et eventuelt kommunikationsbehov uden et parallelt register over de samme arrangementer.
+
+Det samme princip gælder oplysninger om projekter og ansvarlige. Behovsområdet **Hjemmeside og arrangementer** behandles særskilt, men koblingen mellem arrangementer og kommunikation skal fastholdes.
+
+**Sporbarhed:** [#26](https://github.com/OS2sandbox/relations-platform/issues/26), [#22](https://github.com/OS2sandbox/relations-platform/issues/22) samt tværgående principper om fælles oplysninger.  
+**Afklaret:** Genbrug af registrerede aktiviteter frem for parallel registrering.  
+**Åbent:** Hvordan oplysninger udveksles, hvis hjemmeside-/arrangementsfunktionen ligger i et separat system.
+
+## 9. Øvrige behovsområder og videre arbejde
+
+Følgende område i fase 1 er endnu ikke konsolideret på samme detaljeringsniveau:
+
 - **Hjemmeside og arrangementer:** [#14](https://github.com/OS2sandbox/relations-platform/issues/14), [#22](https://github.com/OS2sandbox/relations-platform/issues/22).
 
 Senere behovsafklaring (ikke fase 1):
@@ -305,7 +354,7 @@ Senere behovsafklaring (ikke fase 1):
 - **Økonomi, fakturering og regnskab:** [#19](https://github.com/OS2sandbox/relations-platform/issues/19), [#23](https://github.com/OS2sandbox/relations-platform/issues/23) og økonomidelen af [#33](https://github.com/OS2sandbox/relations-platform/issues/33).
 - **Teknisk videndeling på tværs af OS2-produkter:** [#30](https://github.com/OS2sandbox/relations-platform/issues/30).
 
-## 9. Afklaringer og beslutningsspor
+## 10. Afklaringer og beslutningsspor
 
 Tabellen opsummerer de principper, der er aftalt i arbejdsdialogen. Den erstatter ikke en senere fælles gennemgang i projektets arbejdsgruppe.
 
@@ -335,5 +384,9 @@ Tabellen opsummerer de principper, der er aftalt i arbejdsdialogen. Den erstatte
 | 04.11.2026 | Emner og forløb | Aktiviteter kan stå alene og kategoriseres; flere aktiviteter kan valgfrit samles i forløb, også senere. |
 | 04.11.2026 | Opfølgningsopgaver | Enkel fælles opgavestyring med ansvarlige, status, frister og relevante relationer samt notifikationer og brugerpræferencer. |
 | 04.11.2026 | Fortrolighed | Funktionelt resultat fastholdt, men konkret adgangsmodel afgøres efter afprøvning af relevante systemer. |
+| 04.11.2026 | Kommunikation og abonnementer | Hændelsesbaseret orientering som fælles funktion; både nødvendige rollebestemte orienteringer og frivillige abonnementer. |
+| 04.11.2026 | Onboarding | Platformen understøtter information, vejledning og orientering, men opretter ikke automatiske onboardingopgaver eller styrer forløb. |
+| 04.11.2026 | Kommunikationsbehov | Kommende aktiviteter og eventuelle kommunikationsbehov skal kunne ses i overblik; gennemførelsen administreres ikke i platformen. |
+| 04.11.2026 | Arrangementer og genbrug | Arrangementer og andre aktiviteter registreres så vidt muligt én gang og genbruges på tværs af relevante visninger. |
 
-**Næste trin:** Gennemgå Kommunikation og onboarding med udgangspunkt i [#24](https://github.com/OS2sandbox/relations-platform/issues/24)–[#27](https://github.com/OS2sandbox/relations-platform/issues/27), fastholde afklaringerne her og videreføre modne formuleringer til [kravspecifikation.md](kravspecifikation.md). Kravene prioriteres først, når det samlede fase 1-billede er bedre belyst.
+**Næste trin:** Gennemgå Hjemmeside og arrangementer med udgangspunkt i [#14](https://github.com/OS2sandbox/relations-platform/issues/14) og [#22](https://github.com/OS2sandbox/relations-platform/issues/22), med særligt fokus på koblingen til den fælles aktivitetshåndtering. Den samlede adgangsmodel og øvrige åbne spørgsmål behandles senere; kravene prioriteres først, når det samlede fase 1-billede er bedre belyst.
